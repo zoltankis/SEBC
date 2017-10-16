@@ -17,3 +17,34 @@ node4
 1
 vm.swappiness = 1
 ```
+
+Show the mount attributes of all volumes: 
+I increased the size of the volumes one every intances:
+```
+fdisk /dev/xvda
+```
+After a reboot:
+```
+[root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i hostname -a; lsblk; done
+node0
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0  50G  0 disk
+└─xvda1 202:1    0  50G  0 part /
+node1
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0  50G  0 disk
+└─xvda1 202:1    0  50G  0 part /
+node2
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0  50G  0 disk
+└─xvda1 202:1    0  50G  0 part /
+node3
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0  50G  0 disk
+└─xvda1 202:1    0  50G  0 part /
+node4
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0  50G  0 disk
+└─xvda1 202:1    0  50G  0 part /
+```
+
