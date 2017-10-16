@@ -81,16 +81,21 @@ echo never > /sys/kernel/mm/transparent_hugepage/enabled
 ```
 Check transparent huge page:
 ```
-[root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i hostname -a; cat /sys/kernel/mm/transparent_hugepage/enabled; done
+[root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i hostname -a;cat /sys/kernel/mm/transparent_hugepage/defrag; cat /sys/kernel/mm/transparent_hugepage/enabled; done
 node0
+always madvise [never]
 always madvise [never]
 node1
 always madvise [never]
+always madvise [never]
 node2
+always madvise [never]
 always madvise [never]
 node3
 always madvise [never]
+always madvise [never]
 node4
+always madvise [never]
 always madvise [never]
 ```
 
