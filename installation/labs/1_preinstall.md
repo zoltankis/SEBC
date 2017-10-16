@@ -1,4 +1,4 @@
-Check vm.swappiness on all your nodes
+# Check vm.swappiness on all your nodes
 ```
 [root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i hostname -a;cat /proc/sys/vm/swappiness;cat /etc/sysctl.conf | grep swappines; done
 node0
@@ -18,7 +18,7 @@ node4
 vm.swappiness = 1
 ```
 
-Show the mount attributes of all volumes: 
+# Show the mount attributes of all volumes: 
 I increased the size of the volumes one every intances:
 ```
 fdisk /dev/xvda
@@ -48,7 +48,7 @@ xvda    202:0    0  50G  0 disk
 └─xvda1 202:1    0  50G  0 part /
 ```
 
-Show the reserve space of any non-root, ext-based volumes:
+# Show the reserve space of any non-root, ext-based volumes:
 ```
 [root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i hostname -a; df -h; done
 node0
@@ -73,7 +73,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 tmpfs           7.3G     0  7.3G   0% /dev/shm
 ```
 
-Disable transparent hugepage support:
+# Disable transparent hugepage support:
 Used the following commands on all hosts:
 ```
 echo never > /sys/kernel/mm/transparent_hugepage/defrag
