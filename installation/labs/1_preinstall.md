@@ -99,4 +99,63 @@ always madvise [never]
 always madvise [never]
 ```
 
+# List your network interface configuration
+```
+[root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i hostname -a; ip addr; done
+node0
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP qlen 1000
+    link/ether 02:56:8d:a9:d6:74 brd ff:ff:ff:ff:ff:ff
+    inet 172.32.11.139/20 brd 172.32.15.255 scope global eth0
+    inet6 fe80::56:8dff:fea9:d674/64 scope link
+       valid_lft forever preferred_lft forever
+node1
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP qlen 1000
+    link/ether 02:56:8d:a9:d6:74 brd ff:ff:ff:ff:ff:ff
+    inet 172.32.11.139/20 brd 172.32.15.255 scope global eth0
+    inet6 fe80::56:8dff:fea9:d674/64 scope link
+       valid_lft forever preferred_lft forever
+node2
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP qlen 1000
+    link/ether 02:56:8d:a9:d6:74 brd ff:ff:ff:ff:ff:ff
+    inet 172.32.11.139/20 brd 172.32.15.255 scope global eth0
+    inet6 fe80::56:8dff:fea9:d674/64 scope link
+       valid_lft forever preferred_lft forever
+node3
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP qlen 1000
+    link/ether 02:56:8d:a9:d6:74 brd ff:ff:ff:ff:ff:ff
+    inet 172.32.11.139/20 brd 172.32.15.255 scope global eth0
+    inet6 fe80::56:8dff:fea9:d674/64 scope link
+       valid_lft forever preferred_lft forever
+node4
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP qlen 1000
+    link/ether 02:56:8d:a9:d6:74 brd ff:ff:ff:ff:ff:ff
+    inet 172.32.11.139/20 brd 172.32.15.255 scope global eth0
+    inet6 fe80::56:8dff:fea9:d674/64 scope link
+       valid_lft forever preferred_lft forever
+```
 
