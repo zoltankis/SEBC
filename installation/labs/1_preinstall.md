@@ -73,3 +73,25 @@ Filesystem      Size  Used Avail Use% Mounted on
 tmpfs           7.3G     0  7.3G   0% /dev/shm
 ```
 
+Disable transparent hugepage support:
+Used the following commands on all hosts:
+```
+echo never > /sys/kernel/mm/transparent_hugepage/defrag
+echo never > /sys/kernel/mm/transparent_hugepage/enabled
+```
+Check transparent huge page:
+```
+[root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i hostname -a; cat /sys/kernel/mm/transparent_hugepage/enabled; done
+node0
+always madvise [never]
+node1
+always madvise [never]
+node2
+always madvise [never]
+node3
+always madvise [never]
+node4
+always madvise [never]
+```
+
+
