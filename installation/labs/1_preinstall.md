@@ -194,3 +194,68 @@ node4
 172.32.6.75     ip-172-32-6-75.eu-central-1.compute.internal node4
 ```
 
+# Show the nscd service is running
+Install nsd and ntp on all hosts:
+```
+yum install -y nscd ntp
+```
+Start NSCD on all hosts
+```
+for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i "hostname -a; sudo /sbin/service nscd start"; done
+node0
+Starting nscd: [  OK  ]
+node1
+Starting nscd: [  OK  ]
+node2
+Starting nscd: [  OK  ]
+node3
+Starting nscd: [  OK  ]
+node4
+Starting nscd: [  OK  ]
+```
+NSCD status on all hosts:
+```
+[root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i "hostname -a; /sbin/service nscd status"; done
+
+node0
+nscd (pid 2279) is running...
+node1
+nscd (pid 2123) is running...
+node2
+nscd (pid 1997) is running...
+node3
+nscd (pid 1986) is running...
+node4
+nscd (pid 1972) is running...
+```
+# Show the ntpd service is running
+Start NTPD on all hosts
+```
+for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i "hostname -a; sudo /sbin/service ntpd start"; done
+node0
+Starting ntpd: [  OK  ]
+node1
+Starting ntpd: [  OK  ]
+node2
+Starting ntpd: [  OK  ]
+node3
+Starting ntpd: [  OK  ]
+node4
+Starting ntpd: [  OK  ]
+```
+
+NTPD status on all hosts:
+```
+[root@ip-172-32-11-139 ~]# for i in $(cat hosts); do ssh -i BigDataSEBCkey.pem centos@$i "hostname -a; /sbin/service ntpd status"; done
+node0
+ntpd (pid  2357) is running...
+node1
+ntpd (pid  2187) is running...
+node2
+ntpd (pid  2061) is running...
+node3
+ntpd (pid  2050) is running...
+node4
+ntpd (pid  2036) is running...
+```
+
