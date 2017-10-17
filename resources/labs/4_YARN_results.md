@@ -1,4 +1,5 @@
 # Fastest run (teragen time + terasort time)
+```
 Settings:
         -Dmapreduce.job.maps=4
         -Dmapreduce.map.memory.mb=512
@@ -17,7 +18,9 @@ user    0m7.744s
 sys     0m0.309s
 Deleted /user/zoltankis/results/tg-10GB-4-2-512
 Deleted /user/zoltankis/results/ts-10GB-4-2-512
+```
 # Slowest run (teragen time + terasort time)
+```
 Settings:
         -Dmapreduce.job.maps=1
         -Dmapreduce.map.memory.mb=2048
@@ -36,7 +39,9 @@ user    0m8.540s
 sys     0m0.329s
 Deleted /user/zoltankis/results/tg-10GB-1-1-2048
 Deleted /user/zoltankis/results/ts-10GB-1-1-2048
+```
 # All run
+```
 [zoltankis@ip-172-32-11-139 ~]$ sh YARNtest.sh
 Testing loop started on Tue Oct 17 16:35:28 UTC 2017
 
@@ -445,3 +450,4 @@ sys     0m0.344s
 Deleted /user/zoltankis/results/tg-10GB-4-2-2048
 Deleted /user/zoltankis/results/ts-10GB-4-2-2048
 Testing loop ended on Tue Oct 17 17:57:14 UTC 2017
+```
