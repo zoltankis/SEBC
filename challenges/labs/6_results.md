@@ -1,4 +1,4 @@
-# kinit ernest Result:0: jdbc:hive2://node1:10000/default> SHOW TABLES;
+# kinit ernest Result From :0: jdbc:hive2://node1:10000/default> SHOW TABLES;
 ```
 +------------+--+
 |  tab_name  |
@@ -10,9 +10,8 @@
 +------------+--+
 4 rows selected (0.571 seconds)
 ```
-
+# kinit siwicki Result From :0: jdbc:hive2://node1:10000/default> SHOW TABLES;
 ```
-# kinit siwicki Result:0: jdbc:hive2://node1:10000/default> SHOW TABLES;
 +------------+--+
 |  tab_name  |
 +------------+--+
