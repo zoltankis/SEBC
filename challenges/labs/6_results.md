@@ -9,6 +9,7 @@
 | web_logs   |
 +------------+--+
 4 rows selected (0.571 seconds)
+```
 
 ```
 # kinit siwicki Result:0: jdbc:hive2://node1:10000/default> SHOW TABLES;
