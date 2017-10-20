@@ -107,14 +107,14 @@ siwicki:x:3000:3002::/home/siwicki:/bin/bash
 [root@ip-172-32-1-58 ~]# COMMAND="sudo cat /etc/group | grep \"usa\|emea\""; \
 > HOSTS="node0 node1 node2 node3 node4"; \
 > for i in $HOSTS; do ssh -i BigDataSEBCkey.pem centos@$i $COMMAND; done
-usa:x:3001:
-emea:x:3002:
-usa:x:3001:
-emea:x:3002:
-usa:x:3001:
-emea:x:3002:
-usa:x:3001:
-emea:x:3002:
-usa:x:3001:
-emea:x:3002:
+usa:x:3001:ernest
+emea:x:3002:siwicki
+usa:x:3001:ernest
+emea:x:3002:siwicki
+usa:x:3001:ernest
+emea:x:3002:siwicki
+usa:x:3001:ernest
+emea:x:3002:siwicki
+usa:x:3001:ernest
+emea:x:3002:siwicki
 ```
